@@ -1,10 +1,12 @@
+import Head from "./components/top";
 
-import ListItem from "./components/itemList";
+import ShowItems from "./components/itemList";
 
 export default function App() {
   return (
     <div className="App">
-      <ListItem />
+      <Head />
+      <ShowItems />
     </div>
   );
 }
