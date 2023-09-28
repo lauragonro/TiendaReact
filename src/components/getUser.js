@@ -22,9 +22,9 @@ function UserInfo() {
       })}, []);
 
   return (
-    <div className="userIcon">
+    <span className="userIcon">
       {userInitials.fnl}{userInitials.lnl}
-    </div>
+    </span>
   );
 }
 export default UserInfo;

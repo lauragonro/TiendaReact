@@ -23,6 +23,7 @@ code {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  color: #7B3C0D;
 }
 
 .itemCard {
@@ -31,7 +32,8 @@ code {
   padding: 10px;
   margin: 25px;
   background-color: white;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px rgba(37, 13, 2, 0.815);
+  color: #7B3C0D;
 }
 
 .itemCard img {
@@ -43,15 +45,33 @@ code {
 .userIcon{
   align-items: center;
   display: flex;
+  float:right;
   justify-content: center;
-  background: beige;
+  background: #f5f5dc;
   border-radius: 50%;
   width: 50px;
   height: 50px;
   font-weight: 600;
   font-size: 150%;
+  margin-right: 20%;
 }
 
 header{
-  background-color: #7B3C0D;
+  background-color: #7B3C0D
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 13fr 1fr 1fr;
+  grid-template-rows: 1f;
+  padding: 10px;
+}
+
+.cartIcon{
+  align-items: center;
+  display: flex;
+  float:right;
+  justify-content: center;
+  font-size: 150%;
+  font-weight: 600;
 }
