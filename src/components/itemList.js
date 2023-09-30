@@ -51,7 +51,7 @@ function ShowItems() {
         <>
           <div className="itemsList">
             {items.map((product) => (
-              <ShowItem key={product.id} title={product.title} image={product.image} price={product.price} />
+              <ShowItem id={product.id} title={product.title} image={product.image} price={product.price} />
             ))}
           </div>
           <ThemeProvider theme={theme}>

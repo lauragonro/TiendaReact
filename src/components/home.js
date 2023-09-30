@@ -1,11 +1,11 @@
 import React from "react";
 import IconButton from '@mui/material/IconButton';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import HomeIcon from '@mui/icons-material/Home';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 
 
-function GetCart(){
+function GetHome(){
 
     const theme = createTheme({
         palette: {
@@ -17,14 +17,14 @@ function GetCart(){
 
       
       return(
-        <span className="cartIcon">
+        <span className="homeIcon">
         <ThemeProvider theme={theme}>
-        <Link to="/cartList">
+        <Link to="/">
         <IconButton  size="large" color="primary" >
-        <ShoppingCartIcon fontSize="inherit" />
+        <HomeIcon fontSize="inherit" />
         </IconButton>
         </Link>
         </ThemeProvider>
         </span>
       )
-}export default GetCart
+}export default GetHome
