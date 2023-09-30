@@ -1,9 +1,10 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { AppContext } from "./Context.js";
 
 function ItemPage(){
 
@@ -17,6 +18,7 @@ function ItemPage(){
 
   const { id } = useParams();
   const [props, setProps] = useState(null);
+  const { dispatch } = useContext(AppContext);
 
   useEffect(() => {
       fetch(`https://fakestoreapi.com/products/${id}`)
@@ -29,12 +31,8 @@ function ItemPage(){
   }
 
   const cartAdd = () => {
-      if (typeof window !== 'undefined' && window.localStorage) {
-        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-        cartItems.push(props);
-        localStorage.setItem('cart', JSON.stringify(cartItems));
-        alert("Item added to cart");
-      }
+    dispatch({ type: 'ADD_TO_CART', payload: props });
+    alert("Item added to cart");
   };
   
   return (
@@ -45,7 +43,7 @@ function ItemPage(){
             <h2>${props.price}</h2>
             <p>{props.description}</p>
             <ThemeProvider theme={theme}>
-            <Button onClick={cartAdd}mvariant="outlined" startIcon={<AddShoppingCartIcon />}>
+            <Button onClick={cartAdd} variant="outlined" startIcon={<AddShoppingCartIcon />}>
               Add to cart
             </Button>
             </ThemeProvider>

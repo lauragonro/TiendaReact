@@ -1,8 +1,9 @@
 import React from "react";
-import { useEffect, useState } from 'react';
+import { useEffect, useContext } from 'react';
+import { AppContext } from "./Context.js"; 
 
 function UserInfo() {
-  const [userInitials, setUserInitials] = useState({});
+  const { state, dispatch } = useContext(AppContext);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/users/5')
@@ -15,15 +16,17 @@ function UserInfo() {
         const firstNameLetter = firstname.charAt(0).toUpperCase();
         const lastNameLetter = lastname.charAt(0).toUpperCase();
         
-        setUserInitials({
+        const userInitials = {
           fnl: firstNameLetter,
           lnl: lastNameLetter,
-        });
-      })}, []);
+        };
+        dispatch({ type: 'SET_USER_INITIALS', payload: userInitials });
+
+      })}, [dispatch]);
 
   return (
     <span className="userIcon">
-      {userInitials.fnl}{userInitials.lnl}
+      {state.userInitials.fnl}{state.userInitials.lnl}
     </span>
   );
 }

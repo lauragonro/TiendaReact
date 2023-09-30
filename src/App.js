@@ -3,10 +3,12 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ShowItems from "./components/itemList";
 import CartPage from "./components/cartList";
 import ItemPage from "./components/itemDescription";
+import { AppProvider } from "./components/Context"; 
 
 export default function App() {
   return (
     <BrowserRouter>
+    <AppProvider>
       <div className="App">
         <Head></Head>
         <Routes>
@@ -15,6 +17,7 @@ export default function App() {
           <Route path="/itemDescription/:id" element={<ItemPage />} />
         </Routes>
       </div>
+      </AppProvider>
     </BrowserRouter>
   );
 }

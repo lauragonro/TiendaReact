@@ -1,39 +1,31 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 import IconButton from '@mui/material/IconButton';
 import ClearIcon from '@mui/icons-material/Clear';
+import { AppContext } from "./Context.js"; 
 
 function CartPage() {
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    setCartItems(storedCart);
-  }, []);
+  const { state, dispatch } = useContext(AppContext);
 
   const remove = (itemId) => {
-    const indexToRemove = cartItems.findIndex((item) => item.id === itemId);
+    const itemIndex = state.cartItems.findIndex(item => item.id === itemId);
 
-    if (indexToRemove !== -1) {
-      const updatedCart = [...cartItems];
-      
-      updatedCart.splice(indexToRemove, 1);
-    
-      setCartItems(updatedCart);
-
-      localStorage.setItem('cart', JSON.stringify(updatedCart));
-    }
+  if (itemIndex !== -1) {
+    const updatedCartItems = [...state.cartItems];
+    updatedCartItems.splice(itemIndex, 1);
+    dispatch({ type: 'REMOVE_FROM_CART', payload: updatedCartItems  });  
+  }
   };
 
   const totalPrice = () => {
-    return cartItems.reduce((total, item) => total + item.price, 0);
+    return state.cartItems.reduce((total, item) => total + item.price, 0);
   };
 
   return (
     <div className="cartList">
       <h1>Cart List</h1>
       <div>
-        {cartItems.map((props) => (
+        {state.cartItems.map((props) => (
           <div className="gridContainerL">
             <h2>{props.title}</h2>
             <h2>${props.price}</h2>
@@ -51,5 +43,4 @@ function CartPage() {
     </div>
   );
 }
-  
-  export default CartPage;
+export default CartPage;
