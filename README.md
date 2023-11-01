@@ -1,6 +1,6 @@
 # Jest Test
 
-Test para los componentes User info, top y item.
+Test para los componentes User info, Item y Top.
 
 ## Desarrollado por:
 Daniela Alejandra Puerto Diaz 
@@ -11,4 +11,4 @@ Carlos Esteban Jaramillo Guevara
 
 Mateo Gonzalez Cano
 
-Juliana Gonzalez Ronseria
+Juliana González Ronsería
