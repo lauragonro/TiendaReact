@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Head from '../top';
-import GetHome from './home';
-import GetCart from './cart';
-import UserInfo from './getUser';
+import GetHome from '../home';
+import GetCart from '../cart';
+import UserInfo from '../getUser';
 
 test('Renderiza Head correctamente', () => {
   const { getByTestId } = render(<Head />);
