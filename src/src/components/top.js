@@ -5,12 +5,12 @@ import GetHome from "./home";
 
 function Head(){
     return(
-    <header>
-    <div class="gridContainer">
-    <div><GetHome></GetHome></div>
-    <div><GetCart></GetCart></div>
-    <div><UserInfo></UserInfo></div>
-    </div>
+    <header data-testid="header">
+        <div className="gridContainer">
+        <div data-testid="home-component"><GetHome /></div>
+        <div data-testid="cart-component"><GetCart /></div>
+        <div data-testid="user-info-component"><UserInfo /></div>
+        </div>
     </header>
     )
 };
