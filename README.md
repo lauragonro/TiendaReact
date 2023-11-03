@@ -9,6 +9,6 @@ Julian Mauricio Zafra Moreno
 
 Carlos Esteban Jaramillo Guevara 
 
-Mateo Gonzalez Cano
+Mateo González Cano
 
 Juliana González Ronsería
