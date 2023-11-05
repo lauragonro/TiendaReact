@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useReducer } from "react";
 import reducer from "./Reducer";
 
 const initialState = {
@@ -7,7 +7,7 @@ const initialState = {
   selectedCategory: null,
   originalData: [],
   /*Cart Page*/
-  cartItems: JSON.parse(localStorage.getItem('cart')) || [],
+  cartItems: JSON.parse(localStorage.getItem("cart")) || [],
   /*User*/
   userInitials: {},
 };
