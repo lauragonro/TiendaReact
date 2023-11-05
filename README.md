@@ -1,8 +1,6 @@
-# Jest Test
+# Test End to End
 
-Test para los componentes.
-
-## Desarrollado por:
+### Desarrollado por:
 Daniela Alejandra Puerto Diaz 
 
 Julian Mauricio Zafra Moreno 
